@@ -9,9 +9,13 @@ This project aims to develop a small network automation solution that can config
 
 ##Group Members
 1.AZRY FIKRI ISKANDAR BIN ROSLAN B24CS0009
+
 2.NAJMI HAKIM BIN SAHARIN MIZAM B24CS0031
+
 3.ABU TALIB BIN MOHAMED RAZIK B24CS0002
+
 4.MUHAMMAD FIRDAUS BIN MD SHAHRUNNANHAR A24CS5032
+
 5.THEYSHIGAN A/L MANI BALAN A24CS0202
 
 ## Tools Used
@@ -23,12 +27,15 @@ This project aims to develop a small network automation solution that can config
 
 ## Group Task Division
 
-| Member   	     | Task 
-| Person 1 - AZRY    | GitHub repository, Docker setup, README, project structure, and final integration 
-| Person 2 - NAJMI   | Configure IP address and interface description 
-| Person 3 -  | Configure user account, banner message, and static route 
-| Person 4 -  | Retrieve device information and perform testing 
-| Person 5 - FIRDAUS | Collect Linux system information 
+AZRY - GitHub repository, Docker setup, README, project structure, and final integration 
+
+NAJMI - Configure IP address and interface description 
+
+ABU -  Configure user account, banner message, and static route 
+
+THEYSHIGAN -  Retrieve device information and perform testing 
+
+FIRDAUS - Collect Linux system information 
 
 ## Project Structure
 
