@@ -1,1 +1,45 @@
 # KS-T
+# SECR3253 Network Programming Group Assignment
+
+## Project Title
+Network Automation Project using Docker and Ansible/NETCONF
+
+## Project Objective
+This project aims to develop a small network automation solution that can configure network devices and collect Linux system information automatically.
+
+##Group Members
+1.AZRY FIKRI ISKANDAR BIN ROSLAN B24CS0009
+2.NAJMI HAKIM BIN SAHARIN MIZAM B24CS0031
+3.ABU TALIB BIN MOHAMED RAZIK B24CS0002
+4.MUHAMMAD FIRDAUS BIN MD SHAHRUNNANHAR A24CS5032
+5.THEYSHIGAN A/L MANI BALAN A24CS0202
+
+## Tools Used
+- Docker
+- Docker Compose
+- Ansible
+- NETCONF / Python
+- GitHub
+
+## Group Task Division
+
+| Member   	     | Task 
+| Person 1 - AZRY    | GitHub repository, Docker setup, README, project structure, and final integration 
+| Person 2 - NAJMI   | Configure IP address and interface description 
+| Person 3 -  | Configure user account, banner message, and static route 
+| Person 4 -  | Retrieve device information and perform testing 
+| Person 5 - FIRDAUS | Collect Linux system information 
+
+## Project Structure
+
+```text
+SECR3253-Network-Automation-Project/
+├── README.md
+├── Dockerfile
+├── docker-compose.yml
+├── device_config/
+│   ├── configure_ip_interface.yml
+│   ├── configure_user_banner_route.yml
+│   └── retrieve_device_info.yml
+└── linux_info/
+    └── system_info.sh
