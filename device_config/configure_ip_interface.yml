@@ -1,0 +1,48 @@
+---
+- name: Configure IP address and interface description
+  hosts: cisco
+  gather_facts: no
+
+  vars:
+    interface_name: GigabitEthernet0/0
+    ip_address: 192.168.56.101
+    subnet_mask: 255.255.255.0
+    interface_description: "Connected to Core-Switch"
+
+  tasks:
+    - name: Configure IP, description, and enable interface
+      cisco.ios.ios_config:
+        lines:
+          - description {{ interface_description }}
+          - ip address {{ ip_address }} {{ subnet_mask }}
+          - no shutdown
+        parents: interface {{ interface_name }}
+
+    - name: Verify interface configuration
+      cisco.ios.ios_command:
+        commands:
+          - show running-config interface {{ interface_name }}
+          - show ip interface brief
+      register: output
+
+    - name: Save verification output to file
+      ansible.builtin.copy:
+        content: |
+          ========================================
+          Interface Configuration Verification
+          ========================================
+          Interface : {{ interface_name }}
+          IP Address : {{ ip_address }} / {{ subnet_mask }}
+          Description: {{ interface_description }}
+
+          --- show running-config interface {{ interface_name }} ---
+          {{ output.stdout_lines[0] | join('\n') }}
+
+          --- show ip interface brief ---
+          {{ output.stdout_lines[1] | join('\n') }}
+          ========================================
+        dest: device_config/outputs/ip_interface_verification.txt
+
+    - name: Display verification result
+      ansible.builtin.debug:
+        var: output.stdout_lines

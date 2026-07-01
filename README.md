@@ -29,7 +29,11 @@ This project aims to develop a small network automation solution that can config
 
 AZRY - GitHub repository, Docker setup, README, project structure, and final integration 
 
-NAJMI - Configure IP address and interface description 
+NAJMI - Configure IP address and interface description  
+  - Ansible playbook: `device_config/configure_ip_interface.yml`  
+  - Configures IP address, subnet mask, and description on a Cisco IOS interface  
+  - Enables interface with `no shutdown` and verifies using `show running-config` and `show ip interface brief`  
+  - Output saved to `device_config/outputs/ip_interface_verification.txt` 
 
 ABU -  Configure user account, banner message, and static route 
 
@@ -47,6 +51,9 @@ SECR3253-Network-Automation-Project/
 ├── device_config/
 │   ├── configure_ip_interface.yml
 │   ├── configure_user_banner_route.yml
-│   └── retrieve_device_info.yml
+│   ├── retrieve_device_info.yml
+│   ├── hosts
+│   └── outputs/
+│       └── ip_interface_verification.txt
 └── linux_info/
     └── system_info.sh
